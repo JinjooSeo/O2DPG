@@ -1570,6 +1570,36 @@ FairGenerator*
   return gen;
 }
 
+FairGenerator* 
+  GeneratorCocktailPromptCharmoniaToElectronEvtGen_PbPb5TeV()
+{
+
+  auto genCocktailEvtGen = new o2::eventgen::GeneratorEvtGen<GeneratorCocktail>();
+
+  // TODO: pT, y spectrum tune for PbPb 5 TeV (now using pp 13 TeV tunes)
+  auto genJpsi = new o2::eventgen::O2_GeneratorParamJpsiMidY;
+  genJpsi->SetNSignalPerEvent(1); // signal per event for J/Psi
+  auto genPsi = new o2::eventgen::O2_GeneratorParamPsiMidY;
+  genPsi->SetNSignalPerEvent(1);               // signal per event for Psi(2s)
+  genCocktailEvtGen->AddGenerator(genJpsi, 1); // add cocktail --> J/Psi
+  genCocktailEvtGen->AddGenerator(genPsi, 1);  // add cocktail --> Psi(2s)
+
+  TString pdgs = "443;100443";
+  std::string spdg;
+  TObjArray* obj = pdgs.Tokenize(";");
+  genCocktailEvtGen->SetSizePdg(obj->GetEntriesFast());
+  for (int i = 0; i < obj->GetEntriesFast(); i++) {
+    spdg = obj->At(i)->GetName();
+    genCocktailEvtGen->AddPdg(std::stoi(spdg), i);
+    printf("PDG %d \n", std::stoi(spdg));
+  }
+  genCocktailEvtGen->SetForceDecay(kEvtDiElectron);
+
+  // print debug
+  genCocktailEvtGen->PrintDebug();
+
+  return genCocktailEvtGen;
+}
 
 
 FairGenerator*

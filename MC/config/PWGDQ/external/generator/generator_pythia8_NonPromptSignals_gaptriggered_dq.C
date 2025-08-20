@@ -186,7 +186,7 @@ FairGenerator*
   unsigned long long int random_value = 0;
   ifstream urandom("/dev/urandom", ios::in|ios::binary);
   urandom.read(reinterpret_cast<char*>(&random_value), sizeof(random_seed));
-  gen->readString(Form("Random:seed = %d", random_value % 900000001));
+  gen->readString(Form("Random:seed = %llu", random_value % 900000001));
 
   // print debug
   // gen->PrintDebug();
@@ -224,7 +224,7 @@ FairGenerator*
   unsigned long long int random_value = 0;
   ifstream urandom("/dev/urandom", ios::in|ios::binary);
   urandom.read(reinterpret_cast<char*>(&random_value), sizeof(random_seed));
-  gen->readString(Form("Random:seed = %d", random_value % 900000001));
+  gen->readString(Form("Random:seed = %llu", random_value % 900000001));
 
   // print debug
   // gen->PrintDebug();
@@ -268,7 +268,7 @@ FairGenerator*
   unsigned long long int random_value = 0;
   ifstream urandom("/dev/urandom", ios::in|ios::binary);
   urandom.read(reinterpret_cast<char*>(&random_value), sizeof(random_seed));
-  gen->readString(Form("Random:seed = %d", random_value % 900000001));
+  gen->readString(Form("Random:seed = %llu", random_value % 900000001));
    
   return gen;
 }
@@ -304,7 +304,7 @@ FairGenerator*
   unsigned long long int random_value = 0;
   ifstream urandom("/dev/urandom", ios::in|ios::binary);
   urandom.read(reinterpret_cast<char*>(&random_value), sizeof(random_seed));
-  gen->readString(Form("Random:seed = %d", random_value % 900000001));
+  gen->readString(Form("Random:seed = %llu", random_value % 900000001));
 
   // print debug
   // gen->PrintDebug();
@@ -343,7 +343,7 @@ FairGenerator*
   unsigned long long int random_value = 0;
   ifstream urandom("/dev/urandom", ios::in|ios::binary);
   urandom.read(reinterpret_cast<char*>(&random_value), sizeof(random_seed));
-  gen->readString(Form("Random:seed = %d", random_value % 900000001));
+  gen->readString(Form("Random:seed = %llu", random_value % 900000001));
 
   // print debug
   // gen->PrintDebug();
@@ -381,7 +381,7 @@ FairGenerator*
   unsigned long long int random_value = 0;
   ifstream urandom("/dev/urandom", ios::in|ios::binary);
   urandom.read(reinterpret_cast<char*>(&random_value), sizeof(random_seed));
-  gen->readString(Form("Random:seed = %d", random_value % 900000001));
+  gen->readString(Form("Random:seed = %llu", random_value % 900000001));
 
   // print debug
   // gen->PrintDebug();
