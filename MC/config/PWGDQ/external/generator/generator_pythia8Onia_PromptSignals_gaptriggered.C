@@ -176,7 +176,7 @@ FairGenerator*
 }
 
 FairGenerator*
-  GeneratorPromptJpsiPsi2S_EvtGenMidY(int triggerGap, double rapidityMin = -1.5, double rapidityMax = -1.5, bool verbose = false)
+  GeneratorPromptJpsiPsi2S_EvtGenMidY(int triggerGap, double rapidityMin = -1.5, double rapidityMax = 1.5, bool verbose = false)
 {
   auto gen = new o2::eventgen::GeneratorEvtGen<o2::eventgen::GeneratorPythia8OniaPromptSignalsGapTriggered>();
   gen->setTriggerGap(triggerGap);
