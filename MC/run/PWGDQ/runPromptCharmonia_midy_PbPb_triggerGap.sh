@@ -13,7 +13,7 @@ NWORKERS=${NWORKERS:-8}
 NTIMEFRAMES=${NTIMEFRAMES:-1}
 
 ${O2DPG_ROOT}/MC/bin/o2dpg_sim_workflow.py -eCM 5360 -gen external -j ${NWORKERS} -ns ${NSIGEVENTS} -tf ${NTIMEFRAMES} -seed ${RNDSEED} -e TGeant4 -mod "--skipModules ZDC" \
-        -ini $O2DPG_ROOT/MC/config/PWGDQ/ini/Generator_InjectedPromptCharmoniaMidy_TriggerGap.ini \
+        -ini $O2DPG_ROOT/MC/config/PWGDQ/ini/Generator_InjectedPromptJpsiPsi2SMidy_PythiaOnia_TriggerGap.ini \
         -genBkg pythia8 -procBkg "heavy_ion" -colBkg PbPb --embedding -interactionRate 500000 --orbits-early 0
 
 # run workflow
